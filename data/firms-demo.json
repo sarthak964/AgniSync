@@ -1,0 +1,3312 @@
+{
+  "mode": "real",
+  "region": "Almora district, Uttarakhand",
+  "prepared_utc": "2026-11-14T04:24:29.237900+00:00",
+  "parquet_sha256": "4a06df3f0150368ec4fff26837501944611709f3f5f69ee1cbba2fd69eb6b4d9",
+  "boundary_sha256": "54621082434d446f412c60f1f2e70425b5d7698339d77279d0cf5c28931a860b",
+  "files": [
+    {
+      "file": "modis_2003_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2003_India.csv",
+      "sha256": "5694e17a05064509a388f5f39811a61fd27c91418c34d25c10dac2985751dc3f",
+      "retained_district_rows": 78,
+      "rejected_rows": {
+        "unsupported_satellite": 107,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 10,
+        "invalid_version": 0,
+        "outside_district": 62,
+        "outside_bbox_or_invalid_coordinates": 55834,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2003-01-21T07:38:00+00:00",
+      "last_observation_utc": "2003-06-03T07:56:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:11:51.912784815+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2003-01-01",
+      "requested_end": "2003-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2004_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2004_India.csv",
+      "sha256": "05501540032d6d5bd7ad6362d1e92ffa3a0ccbaa15b258e65f45138a43651b86",
+      "retained_district_rows": 64,
+      "rejected_rows": {
+        "unsupported_satellite": 96,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 2,
+        "invalid_version": 0,
+        "outside_district": 59,
+        "outside_bbox_or_invalid_coordinates": 64504,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2004-02-14T07:56:00+00:00",
+      "last_observation_utc": "2004-05-18T08:09:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:11:49.822849274+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2004-01-01",
+      "requested_end": "2004-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2005_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2005_India.csv",
+      "sha256": "6b3953f03a998e0c8c5349378c0e43861b11aec8938af12ab517bce366c26b0b",
+      "retained_district_rows": 36,
+      "rejected_rows": {
+        "unsupported_satellite": 65,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 5,
+        "invalid_version": 0,
+        "outside_district": 44,
+        "outside_bbox_or_invalid_coordinates": 63335,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2005-05-14T08:01:00+00:00",
+      "last_observation_utc": "2005-06-19T07:37:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:11:51.136631727+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2005-01-01",
+      "requested_end": "2005-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2006_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2006_India.csv",
+      "sha256": "ffecb04d232595780d8d8c94f1daa3d5c0d179cea73caf283a58d7b54ad9ee34",
+      "retained_district_rows": 18,
+      "rejected_rows": {
+        "unsupported_satellite": 12,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 1,
+        "invalid_version": 0,
+        "outside_district": 6,
+        "outside_bbox_or_invalid_coordinates": 65943,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2006-02-05T07:43:00+00:00",
+      "last_observation_utc": "2006-12-02T08:11:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:11:44.591252327+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2006-01-01",
+      "requested_end": "2006-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2007_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2007_India.csv",
+      "sha256": "97e35d63e2c66845a7bfe5d1d9da2bf16ea344c101fa16c54161ad969337ebd0",
+      "retained_district_rows": 16,
+      "rejected_rows": {
+        "unsupported_satellite": 17,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 3,
+        "invalid_version": 0,
+        "outside_district": 8,
+        "outside_bbox_or_invalid_coordinates": 75276,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2007-01-07T07:46:00+00:00",
+      "last_observation_utc": "2007-12-30T08:04:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:11:55.610094309+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2007-01-01",
+      "requested_end": "2007-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2008_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2008_India.csv",
+      "sha256": "791182e389cfb93d1fa687c83a5652e6607281838d86c8ef4ac1b913659e80f0",
+      "retained_district_rows": 75,
+      "rejected_rows": {
+        "unsupported_satellite": 106,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 11,
+        "invalid_version": 0,
+        "outside_district": 75,
+        "outside_bbox_or_invalid_coordinates": 70646,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2008-01-01T07:52:00+00:00",
+      "last_observation_utc": "2008-12-22T07:32:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:11:52.278746605+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2008-01-01",
+      "requested_end": "2008-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2009_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2009_India.csv",
+      "sha256": "20e3a38cec2b9577fed5097ccf3e6bf077e013cacd73f8a3c7adc1f439845c19",
+      "retained_district_rows": 89,
+      "rejected_rows": {
+        "unsupported_satellite": 110,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 16,
+        "invalid_version": 0,
+        "outside_district": 79,
+        "outside_bbox_or_invalid_coordinates": 89942,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2009-01-01T08:09:00+00:00",
+      "last_observation_utc": "2009-06-24T08:22:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:11:56.052690744+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2009-01-01",
+      "requested_end": "2009-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2010_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2010_India.csv",
+      "sha256": "b86609a65797c81a051b25668c75047f2cb62ff68aa4d9acbd81665e1ceb84c7",
+      "retained_district_rows": 56,
+      "rejected_rows": {
+        "unsupported_satellite": 74,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 11,
+        "invalid_version": 0,
+        "outside_district": 54,
+        "outside_bbox_or_invalid_coordinates": 76473,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2010-01-27T08:14:00+00:00",
+      "last_observation_utc": "2010-06-15T07:54:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:11:55.682730436+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2010-01-01",
+      "requested_end": "2010-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2011_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2011_India.csv",
+      "sha256": "836b7099adddd0e390c9ad77650209ec47dac39b6f45968dad1e7131511f9e50",
+      "retained_district_rows": 4,
+      "rejected_rows": {
+        "unsupported_satellite": 21,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 0,
+        "invalid_version": 0,
+        "outside_district": 12,
+        "outside_bbox_or_invalid_coordinates": 72335,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2011-05-01T07:53:00+00:00",
+      "last_observation_utc": "2011-12-18T07:58:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:11:59.692824364+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2011-01-01",
+      "requested_end": "2011-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2012_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2012_India.csv",
+      "sha256": "368fe651a78ae6304a9fb9e8b74d29d9f1f8585e8568864d810a1dd68ad91cb1",
+      "retained_district_rows": 178,
+      "rejected_rows": {
+        "unsupported_satellite": 290,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 26,
+        "invalid_version": 0,
+        "outside_district": 140,
+        "outside_bbox_or_invalid_coordinates": 92516,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2012-01-24T08:17:00+00:00",
+      "last_observation_utc": "2012-06-27T07:59:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:03.774666071+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2012-01-01",
+      "requested_end": "2012-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2013_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2013_India.csv",
+      "sha256": "5868ef22aaed86a2fae31de7912831a647924d10caf116dd547988fba1edeb91",
+      "retained_district_rows": 20,
+      "rejected_rows": {
+        "unsupported_satellite": 14,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 0,
+        "invalid_version": 0,
+        "outside_district": 9,
+        "outside_bbox_or_invalid_coordinates": 71130,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2013-01-24T08:30:00+00:00",
+      "last_observation_utc": "2013-12-25T07:47:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:00.212938786+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2013-01-01",
+      "requested_end": "2013-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2014_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2014_India.csv",
+      "sha256": "a88dddd97ed045a08b06100edea7b9ea29330c4282a5da85f12f3f17ee5ebb82",
+      "retained_district_rows": 73,
+      "rejected_rows": {
+        "unsupported_satellite": 95,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 5,
+        "invalid_version": 0,
+        "outside_district": 48,
+        "outside_bbox_or_invalid_coordinates": 76195,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2014-04-01T08:30:00+00:00",
+      "last_observation_utc": "2014-12-06T08:24:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:01.354986668+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2014-01-01",
+      "requested_end": "2014-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2015_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2015_India.csv",
+      "sha256": "0a6cb1763d344f2d510baa1ceb67e63f2026640b30813290c75754228b97266f",
+      "retained_district_rows": 35,
+      "rejected_rows": {
+        "unsupported_satellite": 30,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 2,
+        "invalid_version": 0,
+        "outside_district": 18,
+        "outside_bbox_or_invalid_coordinates": 68348,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2015-01-20T07:53:00+00:00",
+      "last_observation_utc": "2015-12-31T07:47:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:05.892956972+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2015-01-01",
+      "requested_end": "2015-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2016_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2016_India.csv",
+      "sha256": "dd5a936983cd1d109ab618614c798c8c9017edddcea852c757d891830f256163",
+      "retained_district_rows": 168,
+      "rejected_rows": {
+        "unsupported_satellite": 195,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 18,
+        "invalid_version": 0,
+        "outside_district": 108,
+        "outside_bbox_or_invalid_coordinates": 88320,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2016-01-05T08:05:00+00:00",
+      "last_observation_utc": "2016-12-15T07:59:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:04.274561882+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2016-01-01",
+      "requested_end": "2016-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2017_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2017_India.csv",
+      "sha256": "e193583c401047a0ade386deef0a07d77cbd0f0666065cbed28c4d8c9144bef5",
+      "retained_district_rows": 60,
+      "rejected_rows": {
+        "unsupported_satellite": 58,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 3,
+        "invalid_version": 0,
+        "outside_district": 21,
+        "outside_bbox_or_invalid_coordinates": 82403,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2017-01-23T08:05:00+00:00",
+      "last_observation_utc": "2017-12-23T08:17:00+00:00",
+      "versions_in_retained_rows": [
+        "6.2"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:11.674962521+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2017-01-01",
+      "requested_end": "2017-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2018_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2018_India.csv",
+      "sha256": "4b601294526d27a48665e39531fc6de01412f4e741b7fa40d723269edd76499f",
+      "retained_district_rows": 94,
+      "rejected_rows": {
+        "unsupported_satellite": 127,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 6,
+        "invalid_version": 0,
+        "outside_district": 78,
+        "outside_bbox_or_invalid_coordinates": 90805,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2018-01-10T08:05:00+00:00",
+      "last_observation_utc": "2018-12-30T07:53:00+00:00",
+      "versions_in_retained_rows": [
+        "6.03"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:13.515472174+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2018-01-01",
+      "requested_end": "2018-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2019_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2019_India.csv",
+      "sha256": "2a5d04ebac60ea99392a9b67cb0945381d9863a817a9d188196016e830b51227",
+      "retained_district_rows": 114,
+      "rejected_rows": {
+        "unsupported_satellite": 173,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 13,
+        "invalid_version": 0,
+        "outside_district": 75,
+        "outside_bbox_or_invalid_coordinates": 75127,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2019-01-04T08:11:00+00:00",
+      "last_observation_utc": "2019-06-15T07:59:00+00:00",
+      "versions_in_retained_rows": [
+        "6.03"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:10.992841482+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2019-01-01",
+      "requested_end": "2019-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2020_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2020_India.csv",
+      "sha256": "3266f33c0a190d8e970f562664820cef3d0724cfa42895e3cdbd4c4641894552",
+      "retained_district_rows": 49,
+      "rejected_rows": {
+        "unsupported_satellite": 30,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 2,
+        "invalid_version": 0,
+        "outside_district": 23,
+        "outside_bbox_or_invalid_coordinates": 75917,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2020-04-12T08:11:00+00:00",
+      "last_observation_utc": "2020-12-31T08:17:00+00:00",
+      "versions_in_retained_rows": [
+        "6.03"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:14.925006390+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2020-01-01",
+      "requested_end": "2020-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2021_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2021_India.csv",
+      "sha256": "4e9f8583f92fc81e3e4bdaaa02981f56b529c991c9c9d35897b72b1558d99a5c",
+      "retained_district_rows": 169,
+      "rejected_rows": {
+        "unsupported_satellite": 157,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 19,
+        "invalid_version": 0,
+        "outside_district": 121,
+        "outside_bbox_or_invalid_coordinates": 110801,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2021-01-09T08:11:00+00:00",
+      "last_observation_utc": "2021-04-26T07:53:00+00:00",
+      "versions_in_retained_rows": [
+        "6.03"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:12.515056133+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2021-01-01",
+      "requested_end": "2021-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2022_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2022_India.csv",
+      "sha256": "a51ead4831610c560fae5540d3bd79b621644e7aed04d14eeb2594dece0999fa",
+      "retained_district_rows": 102,
+      "rejected_rows": {
+        "unsupported_satellite": 134,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 8,
+        "invalid_version": 0,
+        "outside_district": 75,
+        "outside_bbox_or_invalid_coordinates": 81206,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2022-02-15T07:59:00+00:00",
+      "last_observation_utc": "2022-06-11T07:23:00+00:00",
+      "versions_in_retained_rows": [
+        "6.03"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:17.719883204+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2022-01-01",
+      "requested_end": "2022-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2023_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2023_India.csv",
+      "sha256": "b62507fb982b492e9a3af159105aea4cf2b842d10fee562d495a0af7da630452",
+      "retained_district_rows": 59,
+      "rejected_rows": {
+        "unsupported_satellite": 35,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 4,
+        "invalid_version": 0,
+        "outside_district": 33,
+        "outside_bbox_or_invalid_coordinates": 78294,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2023-01-05T08:00:00+00:00",
+      "last_observation_utc": "2023-12-25T08:26:00+00:00",
+      "versions_in_retained_rows": [
+        "61.03"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:16.127992630+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2023-01-01",
+      "requested_end": "2023-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2024_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2024_India.csv",
+      "sha256": "8b4a7056fb7324c225b2792253980b964c0a3d4912d97302692a6b7b32d862de",
+      "retained_district_rows": 222,
+      "rejected_rows": {
+        "unsupported_satellite": 181,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 22,
+        "invalid_version": 0,
+        "outside_district": 121,
+        "outside_bbox_or_invalid_coordinates": 73483,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2024-01-04T08:47:00+00:00",
+      "last_observation_utc": "2024-12-22T08:47:00+00:00",
+      "versions_in_retained_rows": [
+        "61.03"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:09:02.682189703+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2024-01-01",
+      "requested_end": "2024-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "modis_2025_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis_2025_India.csv",
+      "sha256": "091916c3b1e72f26746a363a1a04e18abef397982280794f1d1aec0334f0a809",
+      "retained_district_rows": 49,
+      "rejected_rows": {
+        "unsupported_satellite": 13,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 4,
+        "invalid_version": 0,
+        "outside_district": 25,
+        "outside_bbox_or_invalid_coordinates": 94826,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2025-01-26T08:54:00+00:00",
+      "last_observation_utc": "2025-12-29T09:14:00+00:00",
+      "versions_in_retained_rows": [
+        "61.03"
+      ],
+      "stream": "Aqua MODIS",
+      "retrieved_utc": "2026-11-14T04:12:21.192927599+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2025-01-01",
+      "requested_end": "2025-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2013_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2013_India.csv",
+      "sha256": "26f42a07064d58283c19fd97c56a50a6ecc55998badfd027b7e20479c4b4f261",
+      "retained_district_rows": 339,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 125,
+        "invalid_version": 0,
+        "outside_district": 301,
+        "outside_bbox_or_invalid_coordinates": 497351,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2013-01-24T08:31:00+00:00",
+      "last_observation_utc": "2013-12-27T20:41:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:13:36.456506014+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2013-01-01",
+      "requested_end": "2013-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2014_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2014_India.csv",
+      "sha256": "b2aac071fcffa7b155d7002f43963cf76e0bc827fd1f3204403b4af4ce7f1db4",
+      "retained_district_rows": 1459,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 583,
+        "invalid_version": 0,
+        "outside_district": 1161,
+        "outside_bbox_or_invalid_coordinates": 541264,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2014-01-01T20:47:00+00:00",
+      "last_observation_utc": "2014-12-31T08:03:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:12:39.426999331+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2014-01-01",
+      "requested_end": "2014-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2015_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2015_India.csv",
+      "sha256": "475ce811e88de199af34842d6b6afb05a3557be7db10b6385af4aceebf5495b0",
+      "retained_district_rows": 616,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 202,
+        "invalid_version": 0,
+        "outside_district": 503,
+        "outside_bbox_or_invalid_coordinates": 484435,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2015-01-19T08:46:00+00:00",
+      "last_observation_utc": "2015-12-31T07:13:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:12:47.642992258+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2015-01-01",
+      "requested_end": "2015-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2016_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2016_India.csv",
+      "sha256": "db835e1e9568f8f29c5ebccfbf2b1f43cd7e0ffe0e33b7bb2ff8f34c141db429",
+      "retained_district_rows": 2223,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 363,
+        "invalid_version": 0,
+        "outside_district": 2338,
+        "outside_bbox_or_invalid_coordinates": 677019,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2016-01-01T08:35:00+00:00",
+      "last_observation_utc": "2016-12-21T20:01:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:13:28.356854200+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2016-01-01",
+      "requested_end": "2016-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2017_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2017_India.csv",
+      "sha256": "723e76a50eeebefa6f901d1a79b18ec96300c0034d8aa581f3ce9f5d4553ea65",
+      "retained_district_rows": 812,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 207,
+        "invalid_version": 0,
+        "outside_district": 404,
+        "outside_bbox_or_invalid_coordinates": 602728,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2017-01-06T07:37:00+00:00",
+      "last_observation_utc": "2017-12-29T07:43:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:13:37.353594065+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2017-01-01",
+      "requested_end": "2017-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2018_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2018_India.csv",
+      "sha256": "1b6b9fbf3ee95cf5d73e9f3b01616b77e86ffd4fb0f43dfa6bc4223861d08766",
+      "retained_district_rows": 1580,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 465,
+        "invalid_version": 0,
+        "outside_district": 1398,
+        "outside_bbox_or_invalid_coordinates": 647027,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2018-01-03T07:49:00+00:00",
+      "last_observation_utc": "2018-12-31T20:26:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:14:05.379931688+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2018-01-01",
+      "requested_end": "2018-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2019_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2019_India.csv",
+      "sha256": "59398f63e4ec3429126b743692bdded609b5504060b6a63793fc3f42c43417e0",
+      "retained_district_rows": 1887,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 459,
+        "invalid_version": 0,
+        "outside_district": 1540,
+        "outside_bbox_or_invalid_coordinates": 533860,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2019-01-01T07:43:00+00:00",
+      "last_observation_utc": "2019-07-01T07:49:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:13:32.637478590+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2019-01-01",
+      "requested_end": "2019-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2020_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2020_India.csv",
+      "sha256": "c8fac46c8b31f0522c275bf6aaa5345dc523b98096b69f4014390a100d374992",
+      "retained_district_rows": 600,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 73,
+        "invalid_version": 0,
+        "outside_district": 387,
+        "outside_bbox_or_invalid_coordinates": 488572,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2020-02-16T07:36:00+00:00",
+      "last_observation_utc": "2020-12-31T07:55:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:14:01.909198284+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2020-01-01",
+      "requested_end": "2020-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2021_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2021_India.csv",
+      "sha256": "7dbae20742bedb5723f6c8648f9e3bfb6e2b41c7fb184fd2cda73068cd98664a",
+      "retained_district_rows": 2085,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 283,
+        "invalid_version": 0,
+        "outside_district": 1992,
+        "outside_bbox_or_invalid_coordinates": 767578,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2021-01-01T07:36:00+00:00",
+      "last_observation_utc": "2021-06-07T08:33:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:14:11.991878033+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2021-01-01",
+      "requested_end": "2021-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2022_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2022_India.csv",
+      "sha256": "517bcb87ede917538ad8c72b478d638f2d1e3fe58d16f231457ba809d81250eb",
+      "retained_district_rows": 1912,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 386,
+        "invalid_version": 0,
+        "outside_district": 1511,
+        "outside_bbox_or_invalid_coordinates": 587785,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2022-01-03T07:56:00+00:00",
+      "last_observation_utc": "2022-12-31T08:09:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:14:01.777188301+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2022-01-01",
+      "requested_end": "2022-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2023_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2023_India.csv",
+      "sha256": "ae665975f00b08e4c3f88b8057385f6c499c94283c13357ca607cdd54b89e2e1",
+      "retained_district_rows": 755,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 204,
+        "invalid_version": 0,
+        "outside_district": 532,
+        "outside_bbox_or_invalid_coordinates": 578242,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2023-01-04T08:34:00+00:00",
+      "last_observation_utc": "2023-12-31T19:49:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:14:57.765374660+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2023-01-01",
+      "requested_end": "2023-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2024_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2024_India.csv",
+      "sha256": "561c85c5eb63441bae042d6be8b79fd1052be154e3445f355ac5e1fb0451b48f",
+      "retained_district_rows": 2510,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 568,
+        "invalid_version": 0,
+        "outside_district": 2057,
+        "outside_bbox_or_invalid_coordinates": 547177,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2024-01-01T08:46:00+00:00",
+      "last_observation_utc": "2024-12-31T08:02:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:09:12.715662241+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2024-01-01",
+      "requested_end": "2024-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    },
+    {
+      "file": "viirs-snpp_2025_India.csv",
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp_2025_India.csv",
+      "sha256": "d2d173f93ea906f03e2c1ad29560d57160460698ede5e40fe04d9861f00ea6a4",
+      "retained_district_rows": 622,
+      "rejected_rows": {
+        "unsupported_satellite": 0,
+        "wrong_instrument": 0,
+        "invalid_time": 0,
+        "invalid_coordinates": 0,
+        "invalid_confidence": 0,
+        "low_confidence": 95,
+        "invalid_version": 0,
+        "outside_district": 372,
+        "outside_bbox_or_invalid_coordinates": 645287,
+        "outside_requested_year_within_bbox": 0
+      },
+      "first_observation_utc": "2025-01-02T07:25:00+00:00",
+      "last_observation_utc": "2025-12-31T21:28:00+00:00",
+      "versions_in_retained_rows": [
+        "2"
+      ],
+      "stream": "Suomi NPP VIIRS",
+      "retrieved_utc": "2026-11-14T04:15:22.559859991+00:00",
+      "extent": "India archive clipped to Almora",
+      "requested_start": "2025-01-01",
+      "requested_end": "2025-12-31",
+      "district_bounds": [
+        79.03877,
+        29.4219,
+        80.08046,
+        29.97597
+      ]
+    }
+  ],
+  "intervals": [
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-01-01",
+      "end": "2003-05-11",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-05-13",
+      "end": "2003-06-22",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-06-24",
+      "end": "2003-06-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-06-28",
+      "end": "2003-06-28",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-07-01",
+      "end": "2003-07-08",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-07-10",
+      "end": "2003-07-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-07-14",
+      "end": "2003-07-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-07-23",
+      "end": "2003-07-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-07-28",
+      "end": "2003-07-28",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-07-30",
+      "end": "2003-07-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-08-02",
+      "end": "2003-08-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-08-04",
+      "end": "2003-08-11",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-08-15",
+      "end": "2003-08-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-08-17",
+      "end": "2003-08-22",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-08-24",
+      "end": "2003-08-24",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-08-26",
+      "end": "2003-08-29",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-08-31",
+      "end": "2003-08-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-09-02",
+      "end": "2003-09-03",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-09-05",
+      "end": "2003-09-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-09-07",
+      "end": "2003-09-10",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-09-12",
+      "end": "2003-09-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-09-14",
+      "end": "2003-09-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2003-09-18",
+      "end": "2003-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-01-01",
+      "end": "2004-06-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-06-17",
+      "end": "2004-06-17",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-06-19",
+      "end": "2004-07-03",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-07-05",
+      "end": "2004-07-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-07-07",
+      "end": "2004-07-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-07-11",
+      "end": "2004-07-11",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-07-13",
+      "end": "2004-07-14",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-07-16",
+      "end": "2004-07-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-07-23",
+      "end": "2004-08-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-08-04",
+      "end": "2004-08-07",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-08-09",
+      "end": "2004-08-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-08-12",
+      "end": "2004-08-13",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-08-15",
+      "end": "2004-08-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-08-20",
+      "end": "2004-08-25",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-08-29",
+      "end": "2004-09-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-09-04",
+      "end": "2004-09-07",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2004-09-09",
+      "end": "2004-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-01-01",
+      "end": "2005-06-27",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-06-29",
+      "end": "2005-06-29",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-07-01",
+      "end": "2005-07-01",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-07-05",
+      "end": "2005-07-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-07-16",
+      "end": "2005-07-22",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-07-24",
+      "end": "2005-07-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-07-28",
+      "end": "2005-07-29",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-07-31",
+      "end": "2005-07-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-08-02",
+      "end": "2005-08-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-08-04",
+      "end": "2005-08-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-08-13",
+      "end": "2005-08-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-08-17",
+      "end": "2005-08-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-08-21",
+      "end": "2005-08-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-08-23",
+      "end": "2005-08-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-08-25",
+      "end": "2005-08-25",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-08-27",
+      "end": "2005-09-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2005-09-15",
+      "end": "2005-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-01-01",
+      "end": "2006-06-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-06-07",
+      "end": "2006-06-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-06-22",
+      "end": "2006-07-04",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-07-06",
+      "end": "2006-07-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-07-11",
+      "end": "2006-07-11",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-07-13",
+      "end": "2006-07-13",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-07-15",
+      "end": "2006-07-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-07-20",
+      "end": "2006-07-24",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-07-26",
+      "end": "2006-07-27",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-07-29",
+      "end": "2006-07-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-08-02",
+      "end": "2006-08-03",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-08-05",
+      "end": "2006-08-14",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-08-16",
+      "end": "2006-08-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-08-26",
+      "end": "2006-08-28",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-08-30",
+      "end": "2006-09-04",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-09-06",
+      "end": "2006-09-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2006-09-22",
+      "end": "2006-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-01-01",
+      "end": "2007-02-11",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-02-13",
+      "end": "2007-06-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-06-15",
+      "end": "2007-06-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-06-23",
+      "end": "2007-06-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-07-02",
+      "end": "2007-07-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-07-09",
+      "end": "2007-07-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-07-11",
+      "end": "2007-07-13",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-07-15",
+      "end": "2007-07-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-07-18",
+      "end": "2007-07-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-07-22",
+      "end": "2007-07-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-07-25",
+      "end": "2007-07-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-07-29",
+      "end": "2007-08-01",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-08-03",
+      "end": "2007-08-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-08-08",
+      "end": "2007-08-13",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-08-15",
+      "end": "2007-08-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-08-20",
+      "end": "2007-09-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-09-07",
+      "end": "2007-09-07",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-09-09",
+      "end": "2007-09-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-09-11",
+      "end": "2007-09-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-09-18",
+      "end": "2007-09-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2007-09-25",
+      "end": "2007-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-01-01",
+      "end": "2008-06-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-06-19",
+      "end": "2008-06-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-07-02",
+      "end": "2008-07-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-07-05",
+      "end": "2008-07-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-07-14",
+      "end": "2008-07-14",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-07-16",
+      "end": "2008-07-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-07-20",
+      "end": "2008-07-25",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-07-27",
+      "end": "2008-07-29",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-08-01",
+      "end": "2008-08-01",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-08-03",
+      "end": "2008-08-03",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-08-05",
+      "end": "2008-08-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-08-11",
+      "end": "2008-08-11",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-08-16",
+      "end": "2008-08-17",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-08-19",
+      "end": "2008-08-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-08-21",
+      "end": "2008-09-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-09-18",
+      "end": "2008-09-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-09-20",
+      "end": "2008-09-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-09-23",
+      "end": "2008-09-27",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2008-09-29",
+      "end": "2008-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-01-01",
+      "end": "2009-07-03",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-07-05",
+      "end": "2009-07-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-07-22",
+      "end": "2009-07-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-07-30",
+      "end": "2009-07-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-08-01",
+      "end": "2009-08-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-08-04",
+      "end": "2009-08-04",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-08-06",
+      "end": "2009-08-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-08-08",
+      "end": "2009-08-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-08-11",
+      "end": "2009-08-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-08-14",
+      "end": "2009-08-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-08-18",
+      "end": "2009-08-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-08-26",
+      "end": "2009-08-27",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2009-08-29",
+      "end": "2009-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2010-01-01",
+      "end": "2010-07-17",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2010-07-19",
+      "end": "2010-07-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2010-07-21",
+      "end": "2010-07-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2010-08-02",
+      "end": "2010-08-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2010-08-07",
+      "end": "2010-08-29",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2010-08-31",
+      "end": "2010-09-07",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2010-09-09",
+      "end": "2010-09-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2010-09-18",
+      "end": "2010-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-01-01",
+      "end": "2011-06-17",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-06-19",
+      "end": "2011-06-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-06-21",
+      "end": "2011-06-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-06-28",
+      "end": "2011-06-28",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-06-30",
+      "end": "2011-06-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-07-02",
+      "end": "2011-07-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-07-04",
+      "end": "2011-07-13",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-07-16",
+      "end": "2011-07-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-07-21",
+      "end": "2011-07-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-07-23",
+      "end": "2011-08-03",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-08-06",
+      "end": "2011-08-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-08-08",
+      "end": "2011-08-08",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-08-10",
+      "end": "2011-08-10",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-08-12",
+      "end": "2011-08-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-08-14",
+      "end": "2011-08-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-08-19",
+      "end": "2011-08-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-08-21",
+      "end": "2011-09-04",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-09-06",
+      "end": "2011-09-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2011-09-25",
+      "end": "2011-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-01-01",
+      "end": "2012-06-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-06-25",
+      "end": "2012-07-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-07-04",
+      "end": "2012-07-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-07-11",
+      "end": "2012-07-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-07-20",
+      "end": "2012-07-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-07-22",
+      "end": "2012-07-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-07-25",
+      "end": "2012-07-27",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-07-29",
+      "end": "2012-07-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-08-01",
+      "end": "2012-08-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-08-07",
+      "end": "2012-08-08",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-08-10",
+      "end": "2012-08-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-08-23",
+      "end": "2012-08-24",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-08-26",
+      "end": "2012-09-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-09-06",
+      "end": "2012-09-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-09-11",
+      "end": "2012-09-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2012-09-17",
+      "end": "2012-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-01-01",
+      "end": "2013-06-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-06-25",
+      "end": "2013-06-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-06-28",
+      "end": "2013-06-28",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-07-01",
+      "end": "2013-07-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-07-04",
+      "end": "2013-07-11",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-07-13",
+      "end": "2013-07-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-07-25",
+      "end": "2013-07-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-08-01",
+      "end": "2013-08-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-08-07",
+      "end": "2013-08-10",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-08-12",
+      "end": "2013-08-17",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-08-19",
+      "end": "2013-08-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-08-22",
+      "end": "2013-08-27",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-08-29",
+      "end": "2013-09-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-09-04",
+      "end": "2013-09-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2013-10-02",
+      "end": "2013-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-01-01",
+      "end": "2014-06-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-06-22",
+      "end": "2014-06-29",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-07-01",
+      "end": "2014-07-07",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-07-09",
+      "end": "2014-07-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-07-17",
+      "end": "2014-07-17",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-07-19",
+      "end": "2014-07-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-07-22",
+      "end": "2014-08-03",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-08-06",
+      "end": "2014-08-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-08-08",
+      "end": "2014-08-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-08-18",
+      "end": "2014-08-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-08-22",
+      "end": "2014-09-11",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-09-13",
+      "end": "2014-09-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-09-21",
+      "end": "2014-09-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2014-09-23",
+      "end": "2014-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2015-01-01",
+      "end": "2015-07-04",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2015-07-06",
+      "end": "2015-07-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2015-07-11",
+      "end": "2015-07-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2015-07-19",
+      "end": "2015-07-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2015-08-02",
+      "end": "2015-08-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2015-08-21",
+      "end": "2015-08-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2015-08-25",
+      "end": "2015-08-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2015-08-28",
+      "end": "2015-09-22",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2015-09-24",
+      "end": "2015-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-01-01",
+      "end": "2016-06-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-06-18",
+      "end": "2016-07-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-07-05",
+      "end": "2016-07-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-07-09",
+      "end": "2016-07-10",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-07-12",
+      "end": "2016-07-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-07-19",
+      "end": "2016-07-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-07-22",
+      "end": "2016-07-22",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-07-24",
+      "end": "2016-07-25",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-07-28",
+      "end": "2016-07-29",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-07-31",
+      "end": "2016-07-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-08-02",
+      "end": "2016-08-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-08-07",
+      "end": "2016-08-10",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-08-12",
+      "end": "2016-08-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-08-18",
+      "end": "2016-08-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-08-22",
+      "end": "2016-08-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-09-02",
+      "end": "2016-09-04",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-09-06",
+      "end": "2016-09-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2016-09-08",
+      "end": "2016-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-01-01",
+      "end": "2017-06-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-06-21",
+      "end": "2017-07-01",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-07-05",
+      "end": "2017-07-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-07-08",
+      "end": "2017-07-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-07-11",
+      "end": "2017-07-11",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-07-13",
+      "end": "2017-07-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-07-21",
+      "end": "2017-07-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-07-23",
+      "end": "2017-08-10",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-08-12",
+      "end": "2017-08-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-08-17",
+      "end": "2017-08-17",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-08-19",
+      "end": "2017-08-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-08-21",
+      "end": "2017-08-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-09-02",
+      "end": "2017-09-04",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-09-06",
+      "end": "2017-09-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2017-09-20",
+      "end": "2017-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-01-01",
+      "end": "2018-07-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-07-04",
+      "end": "2018-07-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-07-07",
+      "end": "2018-07-20",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-07-23",
+      "end": "2018-07-28",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-07-30",
+      "end": "2018-07-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-08-02",
+      "end": "2018-08-11",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-08-13",
+      "end": "2018-08-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-08-25",
+      "end": "2018-09-03",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-09-05",
+      "end": "2018-09-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-09-21",
+      "end": "2018-10-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2018-10-11",
+      "end": "2018-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2019-01-01",
+      "end": "2019-07-10",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2019-07-12",
+      "end": "2019-07-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2019-07-28",
+      "end": "2019-07-29",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2019-07-31",
+      "end": "2019-08-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2019-08-20",
+      "end": "2019-08-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2019-08-23",
+      "end": "2019-09-10",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2019-09-12",
+      "end": "2019-09-24",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2019-09-26",
+      "end": "2019-09-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2019-09-28",
+      "end": "2019-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-01-01",
+      "end": "2020-06-24",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-06-26",
+      "end": "2020-07-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-07-11",
+      "end": "2020-07-22",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-07-24",
+      "end": "2020-07-28",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-07-30",
+      "end": "2020-08-13",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-08-15",
+      "end": "2020-08-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-08-22",
+      "end": "2020-08-22",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-08-24",
+      "end": "2020-08-24",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-08-26",
+      "end": "2020-08-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-09-03",
+      "end": "2020-09-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-09-14",
+      "end": "2020-09-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2020-09-23",
+      "end": "2020-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2021-01-01",
+      "end": "2021-06-13",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2021-06-16",
+      "end": "2021-06-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2021-06-18",
+      "end": "2021-06-18",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2021-06-20",
+      "end": "2021-07-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2021-07-22",
+      "end": "2021-07-29",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2021-07-31",
+      "end": "2021-08-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2021-08-18",
+      "end": "2021-09-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2021-09-08",
+      "end": "2021-09-13",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2021-09-15",
+      "end": "2021-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2022-01-01",
+      "end": "2022-03-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2022-04-17",
+      "end": "2022-06-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2022-06-23",
+      "end": "2022-06-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2022-07-02",
+      "end": "2022-07-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2022-07-26",
+      "end": "2022-08-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2022-08-25",
+      "end": "2022-09-05",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2022-09-07",
+      "end": "2022-09-08",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2022-09-10",
+      "end": "2022-09-12",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2022-09-15",
+      "end": "2022-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2023-01-01",
+      "end": "2023-07-13",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2023-07-15",
+      "end": "2023-07-25",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2023-07-27",
+      "end": "2023-08-01",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2023-08-03",
+      "end": "2023-08-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2023-08-08",
+      "end": "2023-08-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2023-08-26",
+      "end": "2023-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2024-01-01",
+      "end": "2024-07-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2024-07-04",
+      "end": "2024-07-04",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2024-07-06",
+      "end": "2024-07-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2024-07-21",
+      "end": "2024-08-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2024-08-04",
+      "end": "2024-08-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2024-08-11",
+      "end": "2024-08-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2024-09-02",
+      "end": "2024-09-13",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2024-09-15",
+      "end": "2024-09-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2024-09-17",
+      "end": "2024-09-25",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2024-09-27",
+      "end": "2024-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-01-01",
+      "end": "2025-06-15",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-06-17",
+      "end": "2025-06-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-06-21",
+      "end": "2025-06-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-06-23",
+      "end": "2025-07-19",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-07-21",
+      "end": "2025-07-22",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-07-24",
+      "end": "2025-07-25",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-07-27",
+      "end": "2025-07-27",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-07-29",
+      "end": "2025-07-30",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-08-01",
+      "end": "2025-08-01",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-08-03",
+      "end": "2025-08-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-08-24",
+      "end": "2025-08-24",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-08-26",
+      "end": "2025-09-01",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-09-03",
+      "end": "2025-09-14",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-09-16",
+      "end": "2025-09-16",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-09-18",
+      "end": "2025-09-21",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-09-23",
+      "end": "2025-09-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-09-28",
+      "end": "2025-10-04",
+      "processing": "standard"
+    },
+    {
+      "stream": "Aqua MODIS",
+      "start": "2025-10-06",
+      "end": "2025-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2013-01-01",
+      "end": "2013-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2014-01-01",
+      "end": "2014-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2015-01-01",
+      "end": "2015-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2016-01-01",
+      "end": "2016-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2017-01-01",
+      "end": "2017-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2018-01-01",
+      "end": "2018-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2019-01-01",
+      "end": "2019-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2020-01-01",
+      "end": "2020-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2021-01-01",
+      "end": "2021-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2022-01-01",
+      "end": "2022-07-26",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2022-08-11",
+      "end": "2022-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2023-01-01",
+      "end": "2023-07-25",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2023-07-27",
+      "end": "2023-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2024-01-01",
+      "end": "2024-05-29",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2024-06-04",
+      "end": "2024-07-09",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2024-07-16",
+      "end": "2024-07-23",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2024-07-29",
+      "end": "2024-09-25",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2024-09-27",
+      "end": "2024-11-02",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2024-11-06",
+      "end": "2024-12-31",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2025-01-01",
+      "end": "2025-07-06",
+      "processing": "standard"
+    },
+    {
+      "stream": "Suomi NPP VIIRS",
+      "start": "2025-07-08",
+      "end": "2025-12-31",
+      "processing": "standard"
+    }
+  ],
+  "duplicates_removed": 0
+}

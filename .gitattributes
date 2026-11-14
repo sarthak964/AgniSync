@@ -1,0 +1,4 @@
+# The app verifies cached datasets against checksums of their original bytes.
+/data/almora.geojson -text
+/data/firms-demo.parquet -text
+/data/power-almora.json -text

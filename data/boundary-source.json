@@ -1,0 +1,11 @@
+{
+  "sha256": "54621082434d446f412c60f1f2e70425b5d7698339d77279d0cf5c28931a860b",
+  "metadata_url": "https://www.geoboundaries.org/api/current/gbOpen/IND/ADM2/",
+  "boundary_id": "IND-ADM2-76128533",
+  "retrieved_utc": "2026-11-14T03:59:30.5589107Z",
+  "boundary_year": "2021",
+  "geometry": "Simplified Almora ADM2 feature, WGS 84",
+  "download_url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/IND/ADM2/geoBoundaries-IND-ADM2_simplified.geojson",
+  "license": "Open Data Commons Open Database License 1.0",
+  "source": "Pathways Data Pvt. Ltd., lgdirectory.gov.in"
+}
