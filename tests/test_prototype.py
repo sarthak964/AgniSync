@@ -5,8 +5,11 @@ from zipfile import ZipFile
 import pandas as pd
 from streamlit.testing.v1 import AppTest
 
-from src.analysis import FULL, MISSING, PARTIAL, UNKNOWN, calibrate, monthly_activity, seasonal_comparison, unified_activity
-from src.config import MODIS, ROOT, VIIRS
+from src.analysis import (
+    FULL, MISSING, PARTIAL, UNKNOWN, calibrate, daily_hotspot_cells, monthly_activity, seasonal_comparison,
+    sensor_anomaly_agreement, unified_activity,
+)
+from src.config import MODIS, REGION, ROOT, VIIRS
 from src.datasets import import_files, synthetic
 from src.evidence import weather_window
 from src.exports import export_bundle
@@ -93,6 +96,43 @@ def test_zero_baseline_and_missing_weather():
     assert weather_window(weather, "2024-04", "PRECTOTCORR") is None
 
 
+def test_daily_overlap_requires_the_same_cell_and_utc_day():
+    observations = pd.DataFrame([
+        ("2024-04-25", 360, 3280, MODIS),
+        ("2024-04-25", 360, 3280, MODIS),
+        ("2024-04-25", 360, 3280, VIIRS),
+        ("2024-04-25", 361, 3280, MODIS),
+        ("2024-04-26", 361, 3280, VIIRS),
+    ], columns=["day_utc", "grid_x", "grid_y", "stream"])
+    assert daily_hotspot_cells(observations).detected_by.tolist() == ["Both sensors", "MODIS only", "VIIRS only"]
+    assert daily_hotspot_cells(observations.iloc[:0]).empty
+
+
+def test_sensor_agreement_uses_same_delivered_years():
+    monthly = pd.DataFrame([
+        {
+            "month": f"{year}-04", "stream": stream, "active_cell_days": activity,
+            "standard_delivery": (year, stream) != (2022, VIIRS), "delivery": FULL,
+        }
+        for year, modis, viirs in [
+            (2017, 2, 20), (2018, 2, 20), (2019, 2, 20), (2020, 2, 20),
+            (2021, 2, 20), (2022, 100, 1000), (2023, 2, 30), (2024, 100, 1000),
+        ]
+        for stream, activity in [(MODIS, modis), (VIIRS, viirs)]
+    ])
+    results = sensor_anomaly_agreement(monthly, "2023-04")
+    for result in results.values():
+        assert result["baseline_years"] == ["2017", "2018", "2019", "2020", "2021"]
+    assert results[MODIS]["threshold"] == 2
+    assert results[MODIS]["unusually_high"] is False
+    assert results[VIIRS]["threshold"] == 20
+    assert results[VIIRS]["unusually_high"] is True
+    unpaired = sensor_anomaly_agreement(monthly, "2022-04")
+    assert all(reading["unusually_high"] is None for reading in unpaired.values())
+    too_early = sensor_anomaly_agreement(monthly, "2021-04")
+    assert all(reading["threshold"] is None for reading in too_early.values())
+
+
 def test_export_month_and_synthetic_labels():
     points, manifest = synthetic(district()[1])
     monthly = monthly_activity(points, manifest["intervals"])
@@ -100,6 +140,7 @@ def test_export_month_and_synthetic_labels():
     calendar = unified_activity(monthly, report)
     selected = "2024-04"
     anomaly, _ = seasonal_comparison(calendar, selected)
+    anomaly["sensor_agreement"] = sensor_anomaly_agreement(monthly, selected)
     data = export_bundle(selected, points, monthly, calendar, anomaly, [], ["Test"], manifest, report, {})
     with ZipFile(BytesIO(data)) as bundle:
         points = pd.read_csv(bundle.open("observations.csv"))
@@ -107,18 +148,32 @@ def test_export_month_and_synthetic_labels():
         assert points["mode"].eq("synthetic").all()
         assert len(pd.read_csv(bundle.open("activity_by_sensor.csv"))) == 2
         assert len(pd.read_csv(bundle.open("calendar_month.csv"))) == 1
-        assert json.load(bundle.open("anomaly.json"))["month"] == selected
+        assert json.load(bundle.open("anomaly.json")) == anomaly | {"mode": "synthetic", "region": REGION}
 
 
 def test_streamlit_modes_and_month_selection():
     app = AppTest.from_file(ROOT / "app.py", default_timeout=40).run()
     assert not app.exception
+    assert any(item.value == "Only Suomi NPP VIIRS flags unusually high activity." for item in app.info)
+    day = next(item for item in app.selectbox if item.label == "Day (UTC)")
+    assert day.value == "2024-04-25"
+    labels = {"MODIS only", "VIIRS only", "Both sensors"}
+    april_25 = {item.label: item.value for item in app.metric if item.label in labels}
+    assert april_25 == {"MODIS only": "6", "VIIRS only": "92", "Both sensors": "2"}
+    day.set_value("2024-04-08").run()
+    assert not app.exception
+    assert next(item for item in app.metric if item.label == "Both sensors").value == "0"
+    next(item for item in app.selectbox if item.label == "Year").set_value("2021").run()
+    assert not app.exception
+    assert next(item for item in app.selectbox if item.label == "Month").value == "2021-04"
+    assert any(item.value == "Both sensors flag unusually high activity." for item in app.info)
     data_source = next(item for item in app.radio if item.label == "Data source")
     data_source.set_value("Import FIRMS CSVs").run()
     assert any("Upload one or more" in item.value for item in app.info)
     next(item for item in app.radio if item.label == "Data source").set_value("Synthetic demonstration").run()
     assert not app.exception
     assert any("Synthetic demonstration data" in item.value for item in app.warning)
+    next(item for item in app.selectbox if item.label == "Year").set_value("2024").run()
     next(item for item in app.selectbox if item.label == "Month").set_value("2024-05").run()
     assert not app.exception
     assert any(item.value == "May 2024" for item in app.subheader)

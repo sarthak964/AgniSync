@@ -1,6 +1,6 @@
 # AgniSync — A Satellite Fire Calendar for Almora
 
-A Streamlit dashboard by Team Antariksh Guru for the NASA Space Apps Challenge on harmonizing MODIS and VIIRS hotspots. It compares Aqua MODIS and Suomi NPP VIIRS hotspot activity on a common grid, reconstructs a monthly activity calendar for Almora district, Uttarakhand, and puts unusual months beside NASA POWER weather evidence.
+A Flask dashboard by Team Antariksh Guru for the NASA Space Apps Challenge on harmonizing MODIS and VIIRS hotspots. It compares Aqua MODIS and Suomi NPP VIIRS hotspot activity on a common grid, reconstructs a monthly activity calendar for Almora district, Uttarakhand, and puts unusual months beside NASA POWER weather evidence.
 
 ## Run on Windows
 
@@ -9,7 +9,7 @@ Open PowerShell in the project folder. If you already have the project environme
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1
+.\.venv\Scripts\python.exe -m waitress --listen=127.0.0.1:8504 dashboard:app
 ```
 
 ## Run on Linux or macOS
@@ -19,20 +19,20 @@ From the project folder, with Python 3.12 installed:
 ```bash
 python3.12 -m venv .venv
 ./.venv/bin/python -m pip install -r requirements.txt
-./.venv/bin/python -m streamlit run app.py --server.address 127.0.0.1
+./.venv/bin/python -m waitress --listen=127.0.0.1:8504 dashboard:app
 ```
 
-Open [the local dashboard](http://127.0.0.1:8501). The dependency file contains versions installed and exercised on Windows. Shapely and pyproj handle geometry and projection directly because Windows Application Control blocked the GeoPandas I/O dependency on this machine. PyArrow 22.0.0 passed the same environment's import and Parquet checks.
+Open [the Flask dashboard](http://127.0.0.1:8504). The Streamlit dashboard remains available for local FIRMS CSV imports and local cache exploration. Run it with `python -m streamlit run app.py --server.address 127.0.0.1` using the project environment.
 
 ## Three-minute demo
 
 1. Start on **NASA FIRMS archive**, with **April 2024** selected. Point out the district boundary and the different raw counts from the two satellite streams.
-2. Open **Burning calendar**. One grid cell active on three UTC days contributes three active cell-days. Use the month selector to show that the map and details follow the selection.
-3. Open **Investigate month**. April 2024 had **63.2** adjusted active cell-days against an April median of **8.0** and a 90th-percentile threshold of **48.2** from 20 earlier comparable Aprils. Preceding rainfall was higher than the historical median for those windows, while mean relative humidity was lower. The conditions provide context, and the ignition cause remains unconfirmed.
-4. Open **Sensor comparison**. On 30 held-out monthly pairs the mean absolute difference from Aqua MODIS fell from **71.2** to **2.5** active cell-days. The coefficient is local to this region, period, filter and grid.
-5. Open **Results & sources** and download the selected month's ZIP. It includes the retained point records, monthly activity by stream, the reference-scale value, weather and anomaly results, the explanation and provenance.
+2. Click the **April 25** bar beside the map. The map shows **6** cells with MODIS detections only, **92** with VIIRS detections only and **2** with both. Use the filter chips to isolate a group.
+3. In **Investigate**, April 2024 shows **63.2** adjusted active cell-days against a historical cutoff of **48.2**. Only **VIIRS** crosses its own cutoff when both sensors are compared against the same ten earlier Aprils. Click **April 2021** in the **Calendar** to see a month both satellites flag at the 90th percentile.
+4. In **Compare**, the mean absolute difference from Aqua MODIS fell from **71.2** to **2.5** active cell-days across 30 held-out months. The coefficient is local to this region, period, filter and grid.
+5. Use **Download evidence** to export the selected month's observations, monthly activity, anomaly results, weather, explanation and provenance.
 
-If WebGL or a basemap is unavailable, choose **Coordinate view**. The district outline and points in that view use local data. **Synthetic demonstration** is a separate, fixed-seed mode for showing software behaviour.
+The district outline and grid markers use local data. **Synthetic demonstration** is a separately labeled, fixed-seed mode.
 
 ## Data and refresh
 
@@ -74,4 +74,13 @@ Run `.\.venv\Scripts\python.exe -m pytest -q` on Windows or `./.venv/bin/python 
 - The prototype ships with 19,228 real detections, including Aqua MODIS from 2003–2025 and Suomi NPP VIIRS from 2013–2025. Individual months can be partial or missing.
 - The live key-authenticated FIRMS route needs an end-to-end check with a user-supplied key. The public archive path and the CSV importer use the same normalization and grid.
 - The analysis reports district hotspot activity. Detection opportunity, clear-sky coverage, ignition and burned area require other evidence. The weather series represents one broad grid cell.
-- For deployment, package the app, source, pinned dependencies and bundled caches for a Python 3.12 Streamlit host. Retain the boundary attribution and license and configure any credentials through host secrets. The current prototype runs locally.
+
+## Deploy to Google Cloud Run
+
+From the project directory, use a Google Cloud project with billing enabled and sign in to the Google Cloud CLI. Substitute your project ID below. Cloud Run uses the included Dockerfile to build and serve the dashboard. The bundled Almora demo works without a FIRMS API key.
+
+```sh
+gcloud run deploy agnisync --source . --project YOUR_PROJECT_ID --region us-central1 --allow-unauthenticated --min-instances 0 --max-instances 1 --memory 1Gi
+```
+
+Open the resulting service URL in a private browser window to check public access. Try clicking a daily activity bar and choosing a detection group on the map. Use **Download evidence** to check that the deployment includes the data files. Cloud Run compute, build, image storage and data transfer each have their own pricing. [Google Cloud Run deployment](https://docs.cloud.google.com/run/docs/deploying-source-code) · [Cloud Run pricing](https://cloud.google.com/run/pricing)

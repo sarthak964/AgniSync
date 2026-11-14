@@ -3,9 +3,10 @@ import calendar
 import pandas as pd
 import plotly.graph_objects as go
 import pydeck as pdk
+from pyproj import Transformer
 
 from src.analysis import FULL
-from src.config import MODIS, SENSOR_COLORS, STREAMS, VIIRS
+from src.config import BOTH_SENSORS, DAILY_CELL_COLORS, GRID_CRS, GRID_METRES, MODIS, SENSOR_COLORS, STREAMS, VIIRS
 
 SOURCE_COLORS = {"Observed MODIS": "#a34627", "MODIS fallback": "#a34627", "Adjusted VIIRS": "#196964"}
 CHART_FONT = "Source Sans 3, Arial, sans-serif"
@@ -42,7 +43,7 @@ def map_view(observations, boundary, bounds):
     )
 
 
-def coordinate_map(observations, boundary, bounds):
+def _district_outline(boundary, bounds):
     fig = go.Figure()
     geom = boundary["features"][0]["geometry"]
     polygons = geom["coordinates"] if geom["type"] == "MultiPolygon" else [geom["coordinates"]]
@@ -52,6 +53,14 @@ def coordinate_map(observations, boundary, bounds):
                 x=[point[0] for point in ring], y=[point[1] for point in ring], mode="lines",
                 line=dict(color="#70644b", width=2), hoverinfo="skip", showlegend=False,
             ))
+    west, south, east, north = bounds
+    fig.update_xaxes(title="Longitude", range=[west - 0.03, east + 0.03])
+    fig.update_yaxes(title="Latitude", range=[south - 0.03, north + 0.03], scaleanchor="x", scaleratio=1.14)
+    return fig
+
+
+def coordinate_map(observations, boundary, bounds):
+    fig = _district_outline(boundary, bounds)
     for stream in STREAMS:
         points = observations[observations.stream.eq(stream)]
         fig.add_trace(go.Scatter(
@@ -59,10 +68,45 @@ def coordinate_map(observations, boundary, bounds):
             marker=dict(color=SENSOR_COLORS[stream], size=6, opacity=0.72),
             text=points.timestamp_utc.dt.strftime("%Y-%m-%d %H:%M UTC"), hovertemplate="%{text}<extra>%{fullData.name}</extra>",
         ))
-    west, south, east, north = bounds
-    fig.update_xaxes(title="Longitude", range=[west - 0.03, east + 0.03])
-    fig.update_yaxes(title="Latitude", range=[south - 0.03, north + 0.03], scaleanchor="x", scaleratio=1.14)
     return chart_layout(fig, height=420, legend=dict(orientation="h"))
+
+
+def daily_activity_chart(counts):
+    fig = go.Figure()
+    for label, color in DAILY_CELL_COLORS.items():
+        fig.add_bar(
+            x=counts.index, y=counts[label], name=label, marker_color=color,
+            customdata=counts.index.tolist(),
+            selected=dict(marker=dict(opacity=1)), unselected=dict(marker=dict(opacity=1)),
+            hovertemplate="%{x|%d %b} UTC<br>%{y} cells<extra>%{fullData.name}</extra>",
+        )
+    fig.update_xaxes(type="date", tickformat="%d %b")
+    fig.update_yaxes(rangemode="tozero")
+    return chart_layout(fig, height=235, barmode="stack", showlegend=False, yaxis_title="Grid cells",
+                        clickmode="event+select")
+
+
+def daily_cell_map(cells, boundary, bounds):
+    fig = _district_outline(boundary, bounds)
+    inverse = Transformer.from_crs(GRID_CRS, "EPSG:4326", always_xy=True)
+    for label, color in DAILY_CELL_COLORS.items():
+        group = cells[cells.detected_by.eq(label)]
+        if group.empty:
+            continue
+        x = (group.grid_x + 0.5) * GRID_METRES
+        y = (group.grid_y + 0.5) * GRID_METRES
+        lon, lat = inverse.transform(x.tolist(), y.tolist())
+        fig.add_scatter(
+            x=lon, y=lat, mode="markers", name=label,
+            marker=dict(
+                color=color, size=10 if label == BOTH_SENSORS else 7,
+                symbol="diamond" if label == BOTH_SENSORS else "square",
+                line=dict(color="white", width=0.8),
+            ),
+            customdata=group[["grid_x", "grid_y"]],
+            hovertemplate="Grid cell %{customdata[0]}, %{customdata[1]}<extra>%{fullData.name}</extra>",
+        )
+    return chart_layout(fig, height=405, legend=dict(orientation="h", y=-0.22))
 
 
 def activity_calendar(history):
@@ -103,6 +147,19 @@ def sensor_chart(history):
             fig.add_trace(go.Scatter(x=history.month, y=history[column], name=label, mode="lines+markers",
                                      line=dict(color=color, dash=dash), marker=dict(size=4), connectgaps=False))
     return chart_layout(fig, height=370, yaxis_title="Active cell-days", legend=dict(orientation="h"))
+
+
+def harmonization_gap_chart(evaluation):
+    gaps = [evaluation["raw_mae"], evaluation["adjusted_mae"]]
+    fig = go.Figure(go.Bar(
+        x=gaps, y=["Before adjustment", "After adjustment"], orientation="h",
+        marker_color=[SENSOR_COLORS[MODIS], SENSOR_COLORS[VIIRS]],
+        texttemplate="%{x:.1f}", textposition="outside",
+        hovertemplate="%{y}<br>%{x:.3f} active cell-days<extra></extra>",
+    ))
+    fig.update_xaxes(range=[0, max(1, max(gaps) * 1.2)], title="Mean absolute gap from Aqua MODIS (active cell-days)")
+    fig.update_yaxes(autorange="reversed", automargin=True)
+    return chart_layout(fig, height=210)
 
 
 def anomaly_chart(result, earlier):

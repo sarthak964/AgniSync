@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgniSync · Almora Fire Explorer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+  <script defer src="{{ url_for('plotly_javascript') }}"></script>
+  <script defer src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="/" aria-label="AgniSync home"><span class="brand-mark" aria-hidden="true">A</span>AgniSync</a>
+    <nav aria-label="Dashboard sections">
+      <a href="#explore" class="current">Explore</a><a href="#calendar">Calendar</a>
+      <a href="#investigate">Investigate</a><a href="#compare">Compare</a>
+    </nav>
+    <a href="#sources" class="sources-link">Data &amp; sources <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="explore" class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <div class="location"><span></span> Almora, Uttarakhand</div>
+        <h1 id="page-title">Fire activity explorer<span>.</span></h1>
+        <p>Explore where Aqua MODIS and Suomi NPP VIIRS recorded hotspots and how their observations compare over time.</p>
+      </div>
+      <div class="archive">
+        <span id="archive-name">NASA FIRMS archive</span>
+        <strong id="archive-years">2003–2025</strong>
+        <span id="archive-total">Historical satellite observations</span>
+      </div>
+    </section>
+
+    <form class="controls card" aria-label="Dashboard filters" onsubmit="return false">
+      <label>Data source<select id="mode">{% for key, label in modes.items() %}<option value="{{ key }}">{{ label }}</option>{% endfor %}</select></label>
+      <label>Month<input id="month" type="month" value="2024-04"></label>
+      <label>Day (UTC)<select id="day"></select></label>
+      <a id="export" class="download" href="{{ url_for('download') }}"><span aria-hidden="true">↓</span> Download evidence</a>
+    </form>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <section class="metrics" aria-label="Selected period metrics">
+      <div class="card metric"><span>Monthly activity</span><strong id="activity">—</strong><small id="activity-note">Active cell-days on the MODIS scale</small></div>
+      <div class="card metric modis"><span>Aqua MODIS hotspots</span><strong id="modis">—</strong><small id="modis-note">Monthly detections</small></div>
+      <div class="card metric viirs"><span>Suomi NPP VIIRS hotspots</span><strong id="viirs">—</strong><small id="viirs-note">Monthly detections</small></div>
+      <div class="card metric shared"><span>Shared grid cells</span><strong id="shared">—</strong><small id="shared-note">On the selected UTC day</small></div>
+    </section>
+
+    <section class="analysis-grid" aria-label="Daily hotspot activity">
+      <article class="card panel map-panel">
+        <div class="panel-head"><div><h2>Hotspot map</h2><p id="map-description">1 km grid cells in Almora district</p></div><span class="date-chip" id="map-date">25 Apr 2024</span></div>
+        <fieldset id="map-filters"><legend class="sr-only">Detections to show on the map</legend>
+          {% for label, color in colors.items() %}<label class="filter" style="--marker:{{ color }}"><input type="checkbox" value="{{ label }}" checked><span class="dot" aria-hidden="true"></span>{{ label }} <b data-count="{{ label }}">—</b></label>{% endfor %}
+        </fieldset>
+        <div id="cell-map" class="plot" role="group" aria-label="Map of Almora with detected hotspot cells"></div>
+        <p id="map-note" class="footnote">Each marker sits at the center of a 1 km grid cell.</p>
+      </article>
+      <article class="card panel timeline-panel">
+        <div class="panel-head"><div><h2>Daily activity</h2><p>Click a bar to update the map.</p></div></div>
+        <div id="daily-chart" class="plot" role="group" aria-label="Daily hotspot cell counts"></div>
+        <div class="insight">
+          <h3 id="insight-title">Monthly comparison</h3>
+          <p id="insight-text"></p>
+          <a href="#investigate">See the historical baseline <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </section>
+
+    <section id="calendar" class="card panel section">
+      <div class="panel-head"><div><h2>Burning calendar</h2><p>Click a month to explore its observations. Dashes mark missing activity. Asterisks mark incomplete or unknown delivery.</p></div></div>
+      <div class="calendar-scroll"><table id="month-calendar" aria-label="Monthly active cell-days by year"></table></div>
+    </section>
+
+    <section id="investigate" class="section">
+      <article class="card panel">
+        <div class="panel-head"><div><h2>Investigate the month</h2><p id="baseline-label"></p></div>
+          <label class="threshold">Historical cutoff<select id="percentile">{% for p in [75, 80, 85, 90, 95] %}<option value="{{ p }}"{% if p == 90 %} selected{% endif %}>{{ p }}th percentile</option>{% endfor %}</select></label>
+        </div>
+        <div id="anomaly-chart" class="plot" role="group" aria-label="Selected month compared with earlier years"></div>
+        <div class="evidence-grid">
+          <div><h3>Sensor agreement</h3><p id="agreement"></p><table><thead><tr><th>Sensor</th><th>Activity</th><th>Cutoff</th></tr></thead><tbody id="sensor-rows"></tbody></table></div>
+          <div><h3>Weather context</h3><p id="weather-summary"></p><div class="table-scroll"><table id="weather-table"><thead><tr><th>Measure</th><th>Selected month</th><th>Historical median</th></tr></thead><tbody id="weather-rows"></tbody></table></div></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="compare" class="section card panel">
+      <div class="panel-head"><div><h2>Compare the sensors</h2><p>VIIRS activity is adjusted to the Aqua MODIS reference scale.</p></div></div>
+      <div class="evidence-grid comparison">
+        <div id="sensor-chart" class="plot" role="group" aria-label="Observed MODIS, observed VIIRS and adjusted VIIRS over time"></div>
+        <div class="result"><h3>Before and after adjustment</h3><p id="comparison-note"></p><div id="gap-chart" class="plot" role="group" aria-label="Average monthly gap from MODIS before and after adjustment"></div></div>
+      </div>
+    </section>
+    <footer id="sources" class="section">
+      <div><strong>AgniSync</strong><p>Team Antariksh Guru · NASA Space Apps Challenge</p></div>
+      <div class="source-list"><a id="firms-source">NASA FIRMS</a><a id="power-source">NASA POWER</a><a id="boundary-source">District boundary</a></div>
+    </footer>
+  </main>
+</body>
+</html>

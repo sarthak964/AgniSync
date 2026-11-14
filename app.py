@@ -6,9 +6,11 @@ import pandas as pd
 import shapely
 import streamlit as st
 
-from src.analysis import calibrate, monthly_activity, seasonal_comparison, unified_activity
+from src.analysis import (
+    calibrate, daily_hotspot_cells, monthly_activity, seasonal_comparison, sensor_anomaly_agreement, unified_activity,
+)
 from src.config import (
-    BASELINE_MIN, CUTOVER, DATA, FIRMS_ARCHIVE, GRID_CRS, GRID_METRES, MODIS, POWER_URL, QUALITY, REGION,
+    BASELINE_MIN, CUTOVER, DAILY_CELL_COLORS, DATA, FIRMS_ARCHIVE, GRID_CRS, GRID_METRES, MODIS, POWER_URL, QUALITY, REGION,
     STREAMS, VIIRS, WEATHER_COORDINATES,
 )
 from src.datasets import import_files, load_cache, synthetic
@@ -16,9 +18,12 @@ from src.evidence import explain, weather_evidence
 from src.exports import export_bundle
 from src.observations import district
 from src.sources import local_weather
-from src.visuals import activity_calendar, anomaly_chart, coordinate_map, map_view, seasonal_profile, sensor_chart
+from src.visuals import (
+    activity_calendar, anomaly_chart, coordinate_map, daily_activity_chart, daily_cell_map, harmonization_gap_chart,
+    map_view, seasonal_profile, sensor_chart,
+)
 
-st.set_page_config(page_title="MODIS–VIIRS Fire Activity Explorer", page_icon="🌐", layout="wide")
+st.set_page_config(page_title="AgniSync | Almora fire activity", page_icon="🌐", layout="wide")
 
 
 @st.cache_data(show_spinner="Loading observations…")
@@ -43,9 +48,100 @@ def get_metrics(points, intervals):
     return monthly, model, unified_activity(monthly, model)
 
 
+def show_sensor_agreement(results):
+    st.subheader("Do both sensors flag this month as unusual?")
+    baseline = results[MODIS]
+    years = ", ".join(baseline["baseline_years"]) or "none"
+    st.caption(
+        f"Both sensors use the same {baseline['baseline_count']} earlier years for this calendar month ({years}). "
+        f"The comparison requires complete standard deliveries from both sensors and at least {BASELINE_MIN} earlier pairs."
+    )
+    flagged = [stream for stream, reading in results.items() if reading["unusually_high"]]
+    if baseline["unusually_high"] is None:
+        st.info(baseline["status"])
+    elif len(flagged) == len(STREAMS):
+        st.info("Both sensors flag unusually high activity.")
+    elif flagged:
+        st.info(f"Only {flagged[0]} flags unusually high activity.")
+    else:
+        st.info("Neither sensor crosses its historical cutoff.")
+
+    cutoff_label = f"{baseline['percentile']}th-percentile cutoff"
+    rows = [
+        {
+            "Sensor": stream,
+            "Active cell-days": reading["activity"],
+            cutoff_label: reading["threshold"],
+            "Delivery": reading["delivery"],
+        }
+        for stream, reading in results.items()
+    ]
+    st.dataframe(
+        rows, hide_index=True, width="stretch",
+        column_config={cutoff_label: st.column_config.NumberColumn(format="%.2f")},
+    )
+    st.caption("Each cutoff uses that sensor’s own observed active cell-days. Agreement describes satellite observations only.")
+
+
+def show_daily_comparison(selected, observations, intervals, boundary, bounds):
+    st.subheader("Daily hotspot comparison")
+    cells = daily_hotspot_cells(observations)
+    month = pd.Period(selected, freq="M")
+    dates = pd.date_range(month.start_time, month.end_time.normalize()).strftime("%Y-%m-%d")
+    counts = cells.groupby(["day_utc", "detected_by"]).size().unstack(fill_value=0).reindex(
+        index=dates, columns=list(DAILY_CELL_COLORS), fill_value=0,
+    )
+    busiest = counts.sum(axis=1).idxmax()
+    day_key = f"hotspot_day_{selected}"
+    chart_key = f"hotspot_timeline_{selected}"
+
+    def select_day_from_chart():
+        points = st.session_state[chart_key].selection.points
+        if points and points[-1]["customdata"] in dates:
+            st.session_state[day_key] = points[-1]["customdata"]
+
+    st.plotly_chart(
+        daily_activity_chart(counts), width="stretch", key=chart_key, selection_mode="points",
+        on_select=select_day_from_chart,
+        alt="Daily counts of grid cells with hotspots from MODIS, VIIRS, or both. Choose a bar to update the map.",
+    )
+    day = st.selectbox(
+        "Day (UTC)", dates.tolist(), index=dates.get_loc(busiest), key=day_key,
+        format_func=lambda date: pd.Timestamp(date).strftime("%d %b %Y"),
+        help="Choose a date here or click a bar in the chart.",
+    )
+    for column, label in zip(st.columns(3), DAILY_CELL_COLORS, strict=True):
+        column.metric(label, f"{counts.at[day, label]:,}")
+    delivered = {entry["stream"] for entry in intervals if entry["start"] <= day <= entry["end"]}
+    unverified = [stream for stream in STREAMS if stream not in delivered]
+    if unverified:
+        st.info(f"File delivery evidence is unavailable for {', '.join(unverified)} on this date.")
+    daily = cells[cells.day_utc.eq(day)]
+    if daily.empty:
+        st.caption("The loaded records contain no retained hotspots for this day.")
+        return
+
+    visible_groups = st.pills(
+        "Detections to show on the map", list(DAILY_CELL_COLORS), default=list(DAILY_CELL_COLORS),
+        selection_mode="multi",
+    )
+    visible = daily[daily.detected_by.isin(visible_groups)]
+    if visible.empty:
+        st.info("Choose a detection group with cells on this day to show it on the map.")
+    else:
+        st.plotly_chart(
+            daily_cell_map(visible, boundary, bounds), width="stretch", key="daily_hotspot_map",
+            alt="Map of Almora showing the centers of grid cells with recorded hotspots on the selected day.",
+        )
+    st.caption(
+        "Each marker is the center of a 1 km grid cell. Purple diamonds mark cells with detections from both sensors "
+        "on the same UTC day."
+    )
+
+
 def main():
-    st.title("MODIS–VIIRS Fire Activity Explorer")
-    st.caption("Explore satellite hotspot activity in Almora district, Uttarakhand.")
+    st.title("AgniSync")
+    st.caption("Satellite fire activity in Almora district, Uttarakhand")
     try:
         boundary, geometry = district()
         boundary_metadata = json.loads((DATA / "boundary-source.json").read_text(encoding="utf-8-sig"))
@@ -119,6 +215,7 @@ def main():
         selected = st.selectbox(
             "Month", month_options, index=month_options.index(april) if april in month_options else 0,
             format_func=lambda month: months.month_name[int(month[5:])],
+            key=f"month_{picked_year}",
         )
         year_options = sorted(years)
         displayed_years = (st.select_slider("Years on charts", options=year_options, value=(years[-1], years[0]))
@@ -189,6 +286,9 @@ def main():
         summary = explain(result, evidence)
         for sentence in summary:
             st.write(sentence)
+        sensor_results = sensor_anomaly_agreement(grouped, selected, threshold)
+        show_sensor_agreement(sensor_results)
+        show_daily_comparison(selected, selected_points, manifest["intervals"], boundary, geometry.bounds)
         if evidence:
             st.subheader("Weather evidence")
             weather_table = pd.DataFrame(evidence)[["metric", "unit", "selected", "historical_median", "historical_count"]]
@@ -205,6 +305,17 @@ def main():
         st.write(model["status"])
         st.caption(f"Fit · {model['fit_period']} ({model['fit_months']} complete pairs). Held-out evaluation · {model['evaluation_period']} ({model['evaluation_months']} complete pairs).")
         if model["coefficient"] is not None:
+            evaluation = model["held_out_all"]
+            st.subheader("Monthly gap before and after adjustment")
+            st.plotly_chart(
+                harmonization_gap_chart(evaluation), width="stretch", key="harmonization_gap",
+                alt=f"The average monthly gap from Aqua MODIS was {evaluation['raw_mae']:.1f} active cell-days "
+                    f"before adjustment and {evaluation['adjusted_mae']:.1f} after adjustment.",
+            )
+            st.caption(
+                f"The chart compares VIIRS with Aqua MODIS across the same {evaluation['months']} months "
+                "held out from fitting. Smaller gaps indicate closer agreement with MODIS."
+            )
             low, high = model["viirs_training_range"]
             scale = model["coefficient"]
             st.write(f"Candidate estimate = VIIRS active cell-days × **{scale:.3f}** on the Aqua MODIS reference scale.")
@@ -230,7 +341,8 @@ def main():
             display = display[matches]
         st.dataframe(display, hide_index=True, width="stretch", height=280)
         bundle = export_bundle(
-            selected, points, grouped, full_history, result, evidence, summary, manifest, model,
+            selected, points, grouped, full_history, {**result, "sensor_agreement": sensor_results},
+            evidence, summary, manifest, model,
             boundary_metadata, weather_header,
         )
         st.download_button("Download selected month (.zip)", bundle,

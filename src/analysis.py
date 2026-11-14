@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
-from src.config import BASELINE_MIN, CUTOVER, MODIS, STREAMS, TEST_END, TRAIN_END, VIIRS
+from src.config import BASELINE_MIN, BOTH_SENSORS, CUTOVER, MODIS, STREAMS, TEST_END, TRAIN_END, VIIRS
 
 FULL = "Complete delivery"
 PARTIAL = "Partial delivery"
@@ -50,6 +50,16 @@ def monthly_activity(observations, intervals):
                 "standard_delivery": days <= standard[stream] and key not in any_nonstandard,
             })
     return pd.DataFrame.from_records(records)
+
+
+def daily_hotspot_cells(observations):
+    cell_day = ["day_utc", "grid_x", "grid_y"]
+    detections = observations.groupby([*cell_day, "stream"]).size().unstack(fill_value=0)
+    present = detections.reindex(columns=list(STREAMS), fill_value=0).gt(0)
+    detected_by = np.select(
+        [present.all(axis=1), present[MODIS]], [BOTH_SENSORS, "MODIS only"], default="VIIRS only",
+    )
+    return detections.index.to_frame(index=False).assign(detected_by=detected_by)
 
 
 def _metrics(data, coefficient):
@@ -155,3 +165,17 @@ def seasonal_comparison(calendar, selected, percentile=90):
         result["threshold"] = float(earlier.activity.quantile(percentile / 100))
         result["unusually_high"] = bool(target.activity > result["threshold"])
     return result, earlier
+
+
+def sensor_anomaly_agreement(monthly, selected, percentile=90):
+    eligible = monthly.standard_delivery & monthly.active_cell_days.notna()
+    delivered_streams = monthly.loc[eligible].groupby("month").stream.nunique()
+    paired_months = delivered_streams[delivered_streams.eq(len(STREAMS))].index
+    observed = monthly.assign(
+        activity=monthly.active_cell_days, source=monthly.stream,
+        comparable=monthly.month.isin(paired_months),
+    )
+    return {
+        stream: seasonal_comparison(observed[observed.stream.eq(stream)], selected, percentile)[0]
+        for stream in STREAMS
+    }

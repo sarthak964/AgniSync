@@ -1,0 +1,17 @@
+*
+!Dockerfile
+!requirements.txt
+!dashboard.py
+!src/
+!src/**/*.py
+!web/
+!web/**/
+!web/**/*.html
+!web/**/*.css
+!web/**/*.js
+!data/
+!data/almora.geojson
+!data/boundary-source.json
+!data/firms-demo.json
+!data/firms-demo.parquet
+!data/power-almora.json

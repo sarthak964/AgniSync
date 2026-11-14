@@ -8,11 +8,13 @@ Verified on Windows with Python 3.12. The code can be started in the project dir
 | `.\.venv\Scripts\python.exe -m pip check` | No broken requirements. PyArrow 22.0.0 passed Windows import and Parquet checks. |
 | `.\.venv\Scripts\python.exe -m scripts.fetch_data archive --modis-from 2024 --viirs-from 2024 --end-year 2024 --bundled` | Imported 2,732 real Almora detections from 2024. |
 | `.\.venv\Scripts\python.exe -m scripts.fetch_data archive --bundled` | Verified file sizes against the public NASA catalog and cached 19,228 retained detections from 36 India annual archives. |
-| `.\.venv\Scripts\python.exe -m pytest -q` | 5 tests passed. Streamlit emitted a Pandas deprecation warning about timezone access. |
+| `.\.venv\Scripts\python.exe -m pytest -q` | 7 tests passed. Streamlit emitted a pandas deprecation warning about timezone access. |
 | `.\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501 --server.headless true` | Started the local dashboard. Browser checks covered the map, calendar, April investigation, sensor comparison and results. |
 | `.\.venv\Scripts\python.exe -m scripts.fetch_data firms --start 2024-04-01 --end 2024-04-30` | With no key configured, the command exited with the expected missing-key message. The authenticated call still needs a valid MAP_KEY to verify. |
 
 The browser downloaded `almora-2024-04-real.zip`. ZIP integrity passed, the observations file contained 1,048 records from April 2024 only, and the month summary identified adjusted VIIRS. The archive also contained the anomaly, four weather summaries, explanation and provenance. Streamlit's automated test changed the selected month in synthetic mode and exercised the coordinate map. Individual browser tooltips and macOS/Linux startup were not independently checked.
+
+In Chrome, clicking April 8 on the daily timeline changed the selected date from April 25 and updated the counts. Turning off **VIIRS only** removed that group from the map.
 
 ## Real archive and scientific scope
 
