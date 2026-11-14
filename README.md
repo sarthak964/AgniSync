@@ -2,6 +2,8 @@
 
 A Flask dashboard by Team Antariksh Guru for the NASA Space Apps Challenge on harmonizing MODIS and VIIRS hotspots. It compares Aqua MODIS and Suomi NPP VIIRS hotspot activity on a common grid, reconstructs a monthly activity calendar for Almora district, Uttarakhand, and puts unusual months beside NASA POWER weather evidence.
 
+See the project's [SI disclosure](AI_USAGE.md) for how we used OpenAI Codex and where the data came from.
+
 ## Run locally on Windows
 
 ### 1. Check Python and Git

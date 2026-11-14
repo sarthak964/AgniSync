@@ -21,6 +21,12 @@ def export_bundle(selected, observations, monthly, calendar_row, anomaly, weathe
     metadata = {
         "mode": mode, "region": REGION, "selection_utc": selected, "boundary": boundary,
         "fire_inputs": manifest, "calibration": calibration, "cutover": CUTOVER,
+        "si_disclosure": {
+            "development_tool": "OpenAI Codex",
+            "code": "Codex assisted with analysis, dashboard implementation and testing.",
+            "hotspots": "Seeded Python generator developed with Codex." if mode == "synthetic" else "NASA FIRMS observations.",
+            "weather": "NASA POWER observations." if weather_header else None,
+        },
         "quality_filters": QUALITY, "grid_crs": GRID_CRS, "grid_metres": GRID_METRES,
         "weather_source": {"url": POWER_URL, "query": POWER_QUERY, **weather_header} if weather_header else None,
         "metric": "At most one retained detection per satellite, projected cell and UTC day.",
