@@ -2,27 +2,67 @@
 
 A Flask dashboard by Team Antariksh Guru for the NASA Space Apps Challenge on harmonizing MODIS and VIIRS hotspots. It compares Aqua MODIS and Suomi NPP VIIRS hotspot activity on a common grid, reconstructs a monthly activity calendar for Almora district, Uttarakhand, and puts unusual months beside NASA POWER weather evidence.
 
-## Run on Windows
+## Run locally on Windows
 
-Open PowerShell in the project folder. If you already have the project environment, use the final command.
+### 1. Check Python and Git
+
+Open PowerShell and check that Python 3.12 and Git are available.
+
+```powershell
+py -3.12 --version
+git --version
+```
+
+If either command fails, install the missing tool and reopen PowerShell. With the Python Install Manager installed, run `pymanager install 3.12` to get Python 3.12. [Python for Windows](https://www.python.org/downloads/windows/) · [Git for Windows](https://git-scm.com/install/windows)
+
+### 2. Get the project
+
+For your first download, run these commands from the folder where you want to keep the project.
+
+```powershell
+git clone https://github.com/sarthak964/AgniSync.git
+cd AgniSync
+```
+
+If you already cloned AgniSync, open PowerShell in that copy of the project and run the following.
+
+```powershell
+git switch main
+git pull --ff-only
+```
+
+### 3. Install the dependencies
+
+Run these commands from the AgniSync folder. The first command creates a local Python environment. The second installs Flask, Waitress, and the other libraries listed in `requirements.txt`.
 
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+### 4. Start the dashboard
+
+```powershell
 .\.venv\Scripts\python.exe -m waitress --listen=127.0.0.1:8504 dashboard:app
 ```
 
+Keep PowerShell open and visit [the local dashboard](http://127.0.0.1:8504). You should see **AgniSync** with **NASA FIRMS archive** and **April 2024** selected. The demo data comes with the repo and runs without an API key or cloud account.
+
+Press **Ctrl+C** in PowerShell to stop the server. To start it again, run the command in step 4. If port 8504 is in use, change it to 8505 in both the command and the browser address.
+
 ## Run on Linux or macOS
 
-From the project folder, with Python 3.12 installed:
+With Git and Python 3.12 installed, clone the project and run it from your terminal.
 
 ```bash
+git clone https://github.com/sarthak964/AgniSync.git
+cd AgniSync
 python3.12 -m venv .venv
 ./.venv/bin/python -m pip install -r requirements.txt
 ./.venv/bin/python -m waitress --listen=127.0.0.1:8504 dashboard:app
 ```
 
-Open [the Flask dashboard](http://127.0.0.1:8504). The Streamlit dashboard remains available for local FIRMS CSV imports and local cache exploration. Run it with `python -m streamlit run app.py --server.address 127.0.0.1` using the project environment.
+Open [the local dashboard](http://127.0.0.1:8504). In an existing clone, run `git pull --ff-only` before installing the dependencies and starting the app.
 
 ## Three-minute demo
 
@@ -44,7 +84,7 @@ The files needed for the key-free demo are included. Keep these files in `data/`
 | `firms-demo.parquet` and `firms-demo.json` | Retained district observations, input checksums, rejection counts and delivery history |
 | `power-almora.json` | UTC daily weather and response metadata from NASA POWER |
 
-**Import FIRMS CSVs** accepts multiple NASA FIRMS point files. Download the Aqua MODIS and Suomi NPP 375 m VIIRS products as CSV, preferably using standard processing. To try a small import, use April 2024 and the Almora bounding rectangle (west **79.0387**, south **29.4218**, east **80.0805**, north **29.9760**). The app clips points to the district polygon. CSV uploads have no independent date-delivery record. Their observed counts are displayed with unknown delivery and are excluded from calibration and anomaly thresholds. [NASA FIRMS Archive Download](https://firms.modaps.eosdis.nasa.gov/download/)
+The original Streamlit dashboard offers **Import FIRMS CSVs**. To open it on Windows, run `.\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1`. Download the Aqua MODIS and Suomi NPP 375 m VIIRS products as CSV, preferably using standard processing. To try a small import, use April 2024 and the Almora bounding rectangle (west **79.0387**, south **29.4218**, east **80.0805**, north **29.9760**). The app clips points to the district polygon. CSV uploads have no independent date-delivery record. Their observed counts are displayed with unknown delivery and are excluded from calibration and anomaly thresholds. [NASA FIRMS Archive Download](https://firms.modaps.eosdis.nasa.gov/download/)
 
 To recreate the district cache, the archive command retrieves India-only annual files and clips them locally. A full rebuild downloads about 700 MB before clipping. Use `archive --modis-from 2024 --viirs-from 2024 --end-year 2024` for a smaller slice. The archive and API commands write separate local caches under `data/processed/`. Raw downloads go to `data/raw/`. The `--bundled` option writes the demo cache. The `weather` command refreshes the weather JSON.
 
